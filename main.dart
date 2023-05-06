@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-int kilometer = 0;
+
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int kilometer = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +37,12 @@ class _MyAppState extends State<MyApp> {
                 textAlign:TextAlign.center,
               ),
               TextField(
-                onChanged: (kilometer),
+                onChanged: (value){
+                  setState((){
+                    kilometer = kilometer+1;
+                                
+                  });
+                    },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                 ),
