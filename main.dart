@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int kilometer = 0;
+  int punkte = 0;
   int eingegebenerwert = 0;
   @override
   Widget build(BuildContext context) {
@@ -53,8 +54,14 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () {
                   setState(() {
                     kilometer = kilometer + eingegebenerwert;
+                    punkte = kilometer * 2;
                   });
                 },
+              ),
+              Text(
+                'Insgesamt hast du $punkte Punkte gesammelt.',
+                style: TextStyle(fontSize: 35),
+                textAlign: TextAlign.center,
               ),
             ],
           ),
