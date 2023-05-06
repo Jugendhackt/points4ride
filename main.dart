@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int kilometer = 0;
+  int eingegebenerwert = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,8 +40,7 @@ class _MyAppState extends State<MyApp> {
               TextField(
                 onChanged: (value){
                   setState((){
-                    kilometer = kilometer+1;
-                                
+                    eingegebenerwert = int.parse(value);          
                   });
                     },
                 decoration: InputDecoration(
