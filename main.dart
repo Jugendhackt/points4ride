@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}): super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -30,22 +28,33 @@ class _MyAppState extends State<MyApp> {
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 50),
           child: Column(
-            crossAxisAlignment:CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 'Du hast schon $kilometer Kilometer zurückgelegt',
                 style: TextStyle(fontSize: 35),
-                textAlign:TextAlign.center,
+                textAlign: TextAlign.center,
               ),
               TextField(
-                onChanged: (value){
-                  setState((){
-                    eingegebenerwert = int.parse(value);          
+                onChanged: (value) {
+                  setState(() {
+                    eingegebenerwert = int.parse(value);
                   });
-                    },
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                 ),
+              ),
+              TextButton(
+                child: Text(
+                  'Eingabe',
+                  style: TextStyle(fontSize: 40.0),
+                ),
+                onPressed: () {
+                  setState(() {
+                    kilometer = kilometer + eingegebenerwert;
+                  });
+                },
               ),
             ],
           ),
