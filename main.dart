@@ -36,6 +36,7 @@ class _MyAppState extends State<MyApp> {
                 textAlign:TextAlign.center,
               ),
               TextField(
+                onChanged: (kilometer),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                 ),
