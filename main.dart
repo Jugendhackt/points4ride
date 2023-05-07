@@ -46,28 +46,37 @@ class _MyAppState extends State<MyApp> {
                   border: OutlineInputBorder(),
                 ),
               ),
-              TextButton(
-                child: Text(
-                  'Eingabe',
-                  style: TextStyle(fontSize: 40.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextButton(
+                  child: Text(
+                    'Eingabe',
+                    style: TextStyle(fontSize: 40.0),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      kilometer = kilometer + eingegebenerwert;
+                      punkte = kilometer * 2;
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    kilometer = kilometer + eingegebenerwert;
-                    punkte = kilometer * 2;
-                  });
-                },
               ),
-              Text(
-                'Insgesamt hast du $punkte Punkte gesammelt.',
-                style: TextStyle(fontSize: 35),
-                textAlign: TextAlign.center,
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  'Insgesamt hast du $punkte Punkte gesammelt.',
+                  style: TextStyle(fontSize: 35),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              FloatingActionButton.extended(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.black,
-                onPressed: () {},
-                label: Text('Aktualisieren'),
+              Padding(
+                padding: const EdgeInsets.all(35.0),
+                child: FloatingActionButton.extended(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.black,
+                  onPressed: () {},
+                  label: Text('Aktualisieren'),
+                ),
               ),
             ],
           ),
