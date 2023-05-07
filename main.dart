@@ -63,6 +63,12 @@ class _MyAppState extends State<MyApp> {
                 style: TextStyle(fontSize: 35),
                 textAlign: TextAlign.center,
               ),
+              FloatingActionButton.extended(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.black,
+                onPressed: () {},
+                label: Text('Aktualisieren'),
+              ),
             ],
           ),
         ),
