@@ -15,6 +15,8 @@ class _MyAppState extends State<MyApp> {
   int kilometer = 0;
   int punkte = 0;
   int eingegebenerwert = 0;
+  int gesamtpunkte = 0;
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'points4riding',
+            'Points4Ride          $gesamtpunkte',
           ),
         ),
         body: Padding(
@@ -74,7 +76,11 @@ class _MyAppState extends State<MyApp> {
                 child: FloatingActionButton.extended(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.black,
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      gesamtpunkte = gesamtpunkte + punkte;
+                    });
+                  },
                   label: Text('Aktualisieren'),
                 ),
               ),
