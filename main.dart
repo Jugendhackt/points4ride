@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                   foregroundColor: Colors.black,
                   onPressed: () {
                     setState(() {
-                      gesamtpunkte = gesamtpunkte + punkte;
+                      gesamtpunkte = punkte;
                     });
                   },
                   label: Text('Aktualisieren'),
